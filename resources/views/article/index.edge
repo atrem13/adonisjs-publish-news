@@ -1,0 +1,11 @@
+@layout('layouts.main')
+
+@section('page')
+<ul>
+  @each(article in articles)
+  <a href="">
+    <h3>{{ article.title }}</h3>
+  </a>
+  @endeach
+</ul>
+@endsection

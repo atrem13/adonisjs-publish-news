@@ -2,9 +2,9 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Article from 'App/Models/Article'
 
 export default class ArticlesController {
-  public async index({}: HttpContextContract) {
+  public async index(ctx: HttpContextContract) {
     const articles = await Article.all()
-    return articles
+    return ctx.view.render('article/index', {articles})
   }
 
   public async create({}: HttpContextContract) {}
