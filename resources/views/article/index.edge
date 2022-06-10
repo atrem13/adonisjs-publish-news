@@ -3,7 +3,7 @@
 @section('page')
 <ul>
   @each(article in articles)
-  <a href="">
+  <a href="{{ route('article.show', {id: article.id})}}">
     <h3>{{ article.title }}</h3>
   </a>
   @endeach

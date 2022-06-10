@@ -7,15 +7,18 @@ export default class ArticlesController {
     return ctx.view.render('article/index', {articles})
   }
 
-  public async create({}: HttpContextContract) {}
+  public async create(ctx: HttpContextContract) {}
 
-  public async store({}: HttpContextContract) {}
+  public async store(ctx: HttpContextContract) {}
 
-  public async show({}: HttpContextContract) {}
+  public async show(ctx: HttpContextContract) {
+    const article = await Article.find(ctx.params.id)
+    return ctx.view.render('article/_id', { article })
+  }
 
-  public async edit({}: HttpContextContract) {}
+  public async edit(ctx: HttpContextContract) {}
 
-  public async update({}: HttpContextContract) {}
+  public async update(ctx: HttpContextContract) {}
 
-  public async destroy({}: HttpContextContract) {}
+  public async destroy(ctx: HttpContextContract) {}
 }
